@@ -669,7 +669,7 @@
                 "compareTo": "name",
                 "fields": {
                   "ext_info": "packet_ext_info",
-                  "ext_enty": "packet_ext_entry",
+                  "ext_entry": "packet_ext_entry",
                   "set_click_distance": "packet_set_click_distance",
                   "custom_block_support_level": "packet_custom_block_support_level",
                   "hold_this": "packet_hold_this",
