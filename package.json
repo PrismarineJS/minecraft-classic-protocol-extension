@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mhsjlw/minecraft-classic-protocol-extension/issues"
   },
-  "homepage": "https://github.com/mhsjlw/minecraft-classic-protocol-extension#readme"
+  "homepage": "https://github.com/mhsjlw/minecraft-classic-protocol-extension#readme",
+  "dependencies": {
+    "minecraft-classic-protocol": "^1.3.0"
+  }
 }
