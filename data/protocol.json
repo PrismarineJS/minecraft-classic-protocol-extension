@@ -1,0 +1,701 @@
+{
+  "toServer": {
+    "types": {
+      "packet_player_clicked": [
+        "container",
+        [
+          {
+            "name": "button",
+            "type": "i8"
+          },
+          {
+            "name": "action",
+            "type": "i8"
+          },
+          {
+            "name": "yaw",
+            "type": "i16"
+          },
+          {
+            "name": "pitch",
+            "type": "i16"
+          },
+          {
+            "name": "target_entity_id",
+            "type": "i8"
+          },
+          {
+            "name": "target_block_x",
+            "type": "i16"
+          },
+          {
+            "name": "target_block_y",
+            "type": "i16"
+          },
+          {
+            "name": "target_block_z",
+            "type": "16"
+          },
+          {
+            "name": "target_block_face",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "u8",
+                "mappings": {
+                  "0x22": "player_clicked"
+                }
+              }
+            ]
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "player_clicked": "packet_player_clicked"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "toClient": {
+    "types": {
+      "packet_ext_info": [
+        "container",
+        [
+          {
+            "name": "app_name",
+            "type": "string"
+          },
+          {
+            "name": "extension_count",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_ext_entry": [
+        "container",
+        [
+          {
+            "name": "ext_name",
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "type": "i32"
+          }
+        ]
+      ],
+      "packet_set_click_distance": [
+        "container",
+        [
+          {
+            "name": "distance",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_custom_block_support_level": [
+        "container",
+        [
+          {
+            "name": "support_level",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_hold_this": [
+        "container",
+        [
+          {
+            "name": "block_to_hold",
+            "type": "i8"
+          },
+          {
+            "name": "prevent_change",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_set_text_hotkey": [
+        "container",
+        [
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "action",
+            "type": "string"
+          },
+          {
+            "name": "keycode",
+            "type": "i32"
+          },
+          {
+            "name": "keymods",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_add_player_name": [
+        "container",
+        [
+          {
+            "name": "name_id",
+            "type": "i16"
+          },
+          {
+            "name": "player_name",
+            "type": "string"
+          },
+          {
+            "name": "list_name",
+            "type": "string"
+          },
+          {
+            "name": "group_name",
+            "type": "string"
+          },
+          {
+            "name": "group_rank",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_add_entity_2": [
+        "container",
+        [
+          {
+            "name": "entity_id",
+            "type": "i8"
+          },
+          {
+            "name": "in_game_name",
+            "type": "string"
+          },
+          {
+            "name": "skin_name",
+            "type": "string"
+          },
+          {
+            "name": "x",
+            "type": "i16"
+          },
+          {
+            "name": "y",
+            "type": "i16"
+          },
+          {
+            "name": "z",
+            "type": "i16"
+          },
+          {
+            "name": "yaw",
+            "type": "i8"
+          },
+          {
+            "name": "pitch",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_remove_player_name": [
+        "container",
+        [
+          {
+            "name": "name_id",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_env_set_color": [
+        "container",
+        [
+          {
+            "name": "variable",
+            "type": "i8"
+          },
+          {
+            "name": "red",
+            "type": "i16"
+          },
+          {
+            "name": "green",
+            "type": "i16"
+          },
+          {
+            "name": "blue",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_make_selection": [
+        "container",
+        [
+          {
+            "name": "selection_id",
+            "type": "i8"
+          },
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "start_x",
+            "type": "i16"
+          },
+          {
+            "name": "start_y",
+            "type": "i16"
+          },
+          {
+            "name": "start_z",
+            "type": "i16"
+          },
+          {
+            "name": "end_x",
+            "type": "i16"
+          },
+          {
+            "name": "end_y",
+            "type": "i16"
+          },
+          {
+            "name": "end_z",
+            "type": "i16"
+          },
+          {
+            "name": "red",
+            "type": "i16"
+          },
+          {
+            "name": "green",
+            "type": "i16"
+          },
+          {
+            "name": "blue",
+            "type": "i16"
+          },
+          {
+            "name": "opacity",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_remove_selection": [
+        "container",
+        [
+          {
+            "name": "selection_id",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_set_block_permission": [
+        "container",
+        [
+          {
+            "name": "block_type",
+            "type": "i8"
+          },
+          {
+            "name": "allow_placement",
+            "type": "i8"
+          },
+          {
+            "name": "allow_deletion",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_change_model": [
+        "container",
+        [
+          {
+            "name": "entity_id",
+            "type": "i8"
+          },
+          {
+            "name": "model_name",
+            "type": "string"
+          }
+        ]
+      ],
+      "packet_env_set_map_appearance_2": [
+        "container",
+        [
+          {
+            "name": "texture_pack_url",
+            "type": "string"
+          },
+          {
+            "name": "side_block",
+            "type": "i8"
+          },
+          {
+            "name": "edge_block",
+            "type": "i8"
+          },
+          {
+            "name": "side_level",
+            "type": "i16"
+          },
+          {
+            "name": "cloud_level",
+            "type": "i16"
+          },
+          {
+            "name": "maximum_view_distance",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_set_weather_type": [
+        "container",
+        [
+          {
+            "name": "type",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_hack_control": [
+        "container",
+        [
+          {
+            "name": "flying",
+            "type": "i8"
+          },
+          {
+            "name": "no_clip",
+            "type": "i8"
+          },
+          {
+            "name": "speeding",
+            "type": "i8"
+          },
+          {
+            "name": "spawn_control",
+            "type": "i8"
+          },
+          {
+            "name": "third_person_view",
+            "type": "i8"
+          },
+          {
+            "name": "jump_height",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_define_block": [
+        "container",
+        [
+          {
+            "name": "block_id",
+            "type": "i8"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "solidity",
+            "type": "i8"
+          },
+          {
+            "name": "movement_speed",
+            "type": "i8"
+          },
+          {
+            "name": "top_texture_id",
+            "type": "i8"
+          },
+          {
+            "name": "side_texture_id",
+            "type": "i8"
+          },
+          {
+            "name": "bottom_texture_id",
+            "type": "i8"
+          },
+          {
+            "name": "transmits_light",
+            "type": "i8"
+          },
+          {
+            "name": "walk_sound",
+            "type": "i8"
+          },
+          {
+            "name": "full_bright",
+            "type": "i8"
+          },
+          {
+            "name": "shape",
+            "type": "i8"
+          },
+          {
+            "name": "block_draw",
+            "type": "i8"
+          },
+          {
+            "name": "fog_density",
+            "type": "i8"
+          },
+          {
+            "name": "fog_r",
+            "type": "i8"
+          },
+          {
+            "name": "fog_g",
+            "type": "i8"
+          },
+          {
+            "name": "fog_b",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_remove_block": [
+        "container",
+        [
+          {
+            "name": "block_id",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_define_block_ext": [
+        "container",
+        [
+          {
+            "name": "block_id",
+            "type": "i8"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "solidity",
+            "type": "i8"
+          },
+          {
+            "name": "movement_speed",
+            "type": "i8"
+          },
+          {
+            "name": "top_texture_id",
+            "type": "i8"
+          },
+          {
+            "name": "left_texture_id",
+            "value": "i8"
+          },
+          {
+            "name": "right_texture_id",
+            "value": "i8"
+          },
+          {
+            "name": "front_texture_id",
+            "value": "i8"
+          },
+          {
+            "name": "back_texture_id",
+            "value": "i8"
+          },
+          {
+            "name": "bottom_texture_id",
+            "type": "i8"
+          },
+          {
+            "name": "transmits_light",
+            "type": "i8"
+          },
+          {
+            "name": "walk_sound",
+            "type": "i8"
+          },
+          {
+            "name": "full_bright",
+            "type": "i8"
+          },
+          {
+            "name": "min_x",
+            "value": "i8"
+          },
+          {
+            "name": "min_y",
+            "value": "i8"
+          },
+          {
+            "name": "min_z",
+            "value": "i8"
+          },
+          {
+            "name": "max_x",
+            "value": "i8"
+          },
+          {
+            "name": "max_y",
+            "value": "i8"
+          },
+          {
+            "name": "max_z",
+            "value": "i8"
+          },
+          {
+            "name": "block_draw",
+            "type": "i8"
+          },
+          {
+            "name": "fog_density",
+            "type": "i8"
+          },
+          {
+            "name": "fog_r",
+            "type": "i8"
+          },
+          {
+            "name": "fog_g",
+            "type": "i8"
+          },
+          {
+            "name": "fog_b",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_set_text_color": [
+        "container",
+        [
+          {
+            "name": "red",
+            "type": "u8"
+          },
+          {
+            "name": "green",
+            "type": "u8"
+          },
+          {
+            "name": "blue",
+            "type": "u8"
+          },
+          {
+            "name": "alpha",
+            "type": "u8"
+          },
+          {
+            "name": "code",
+            "type": "u8"
+          }
+        ]
+      ],
+      "packet_bulk_block_update": [
+        "container",
+        [
+          {
+            "name": "count",
+            "type": "u8"
+          },
+          {
+            "name": "indices",
+            "type": "byte_array"
+          },
+          {
+            "name": "blocks",
+            "type": "byte_array"
+          }
+        ]
+      ],
+      "packet": [
+        "container",
+        [
+          {
+            "name": "name",
+            "type": [
+              "mapper",
+              {
+                "type": "u8",
+                "mappings": {
+                  "0x10": "ext_info",
+                  "0x11": "ext_entry",
+                  "0x12": "set_click_distance",
+                  "0x13": "custom_block_support_level",
+                  "0x14": "hold_this",
+                  "0x15": "set_text_hotkey",
+                  "0x16": "add_player_name",
+                  "0x21": "add_entity_2",
+                  "0x18": "remove_player_name",
+                  "0x19": "env_set_color",
+                  "0x1A": "make_selection",
+                  "0x1B": "remove_selection",
+                  "0x1C": "set_block_permission",
+                  "0x1D": "change_model",
+                  "0x1E": "env_set_map_appearance_2",
+                  "0x1F": "set_weather_type",
+                  "0x20": "hack_control",
+                  "0x23": "define_block",
+                  "0x24": "remove_block",
+                  "0x25": "define_block_ext",
+                  "0x27": "set_text_color",
+                  "0x26": "bulk_block_update"
+                }
+              }
+            ]
+          },
+          {
+            "name": "params",
+            "type": [
+              "switch",
+              {
+                "compareTo": "name",
+                "fields": {
+                  "ext_info": "packet_ext_info",
+                  "ext_enty": "packet_ext_entry",
+                  "set_click_distance": "packet_set_click_distance",
+                  "custom_block_support_level": "packet_custom_block_support_level",
+                  "hold_this": "packet_hold_this",
+                  "set_text_hotkey": "packet_set_text_hotkey",
+                  "add_player_name": "packet_add_player_name",
+                  "add_entity_2": "packet_add_entity_2",
+                  "remove_player_name": "packet_remove_player_name",
+                  "env_set_color": "packet_env_set_color",
+                  "make_selection": "packet_make_selection",
+                  "remove_selection": "packet_remove_selection",
+                  "set_block_permission": "packet_set_block_permission",
+                  "change_model": "packet_change_model",
+                  "env_set_map_appearance_2": "packet_env_set_map_appearance_2",
+                  "set_weather_type": "packet_set_weather_type",
+                  "hack_control": "packet_hack_control",
+                  "define_block": "packet_define_block",
+                  "remove_block": "packet_remove_block",
+                  "define_block_ext": "packet_define_block_ext",
+                  "set_text_color": "packet_set_text_color",
+                  "bulk_block_update": "packet_bulk_block_update"
+                }
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
