@@ -1,4 +1,11 @@
 {
+  "types":{
+    "u8":"native",
+    "string":"native",
+    "i8":"native",
+    "i16":"native",
+    "byte_array":"native"
+  },
   "toServer": {
     "types": {
       "packet_player_clicked": [
@@ -34,7 +41,7 @@
           },
           {
             "name": "target_block_z",
-            "type": "16"
+            "type": "i16"
           },
           {
             "name": "target_block_face",
@@ -537,19 +544,19 @@
           },
           {
             "name": "left_texture_id",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "right_texture_id",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "front_texture_id",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "back_texture_id",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "bottom_texture_id",
@@ -569,27 +576,27 @@
           },
           {
             "name": "min_x",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "min_y",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "min_z",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "max_x",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "max_y",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "max_z",
-            "value": "i8"
+            "type": "i8"
           },
           {
             "name": "block_draw",

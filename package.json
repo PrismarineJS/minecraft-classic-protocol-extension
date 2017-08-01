@@ -1,6 +1,6 @@
 {
   "name": "minecraft-classic-protocol-extension",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A plugin for minecraft-classic-protocol that adds experimental and bleeding-edge CPE features",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/mhsjlw/minecraft-classic-protocol-extension.git"
   },
   "keywords": [],
-  "author": "mhsjlw <mhsjlw03@gmail.com>",
+  "author": "mhsjlw",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mhsjlw/minecraft-classic-protocol-extension/issues"
