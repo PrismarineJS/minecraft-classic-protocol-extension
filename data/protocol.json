@@ -74,6 +74,15 @@
             "type": "i32"
           }
         ]
+      ],     
+      "packet_custom_block_support_level": [
+        "container",
+        [
+          {
+            "name": "support_level",
+            "type": "i8"
+          }
+        ]
       ],
       "packet": [
         "container",
@@ -87,7 +96,8 @@
                 "mappings": {
                   "0x22": "player_clicked",
                   "0x10": "ext_info",
-                  "0x11": "ext_entry"
+                  "0x11": "ext_entry",
+                  "0x13": "custom_block_support_level"
                 }
               }
             ]
@@ -101,7 +111,8 @@
                 "fields": {
                   "player_clicked": "packet_player_clicked",
                   "ext_info": "packet_ext_info",
-                  "ext_entry": "packet_ext_entry"
+                  "ext_entry": "packet_ext_entry",
+                  "custom_block_support_level": "packet_custom_block_support_level"
                 }
               }
             ]
