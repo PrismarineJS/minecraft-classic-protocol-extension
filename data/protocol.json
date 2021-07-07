@@ -74,6 +74,15 @@
             "type": "i32"
           }
         ]
+      ],     
+      "packet_custom_block_support_level": [
+        "container",
+        [
+          {
+            "name": "support_level",
+            "type": "i8"
+          }
+        ]
       ],
       "packet": [
         "container",
@@ -87,7 +96,8 @@
                 "mappings": {
                   "0x22": "player_clicked",
                   "0x10": "ext_info",
-                  "0x11": "ext_entry"
+                  "0x11": "ext_entry",
+                  "0x13": "custom_block_support_level"
                 }
               }
             ]
@@ -101,7 +111,8 @@
                 "fields": {
                   "player_clicked": "packet_player_clicked",
                   "ext_info": "packet_ext_info",
-                  "ext_entry": "packet_ext_entry"
+                  "ext_entry": "packet_ext_entry",
+                  "custom_block_support_level": "packet_custom_block_support_level"
                 }
               }
             ]
@@ -662,6 +673,45 @@
           }
         ]
       ],
+      "packet_set_map_env_url": [
+        "container",
+        [
+          {
+          "name": "texture_pack_url",
+          "type": "string"
+          }
+        ]
+      ],
+      "packet_set_map_env_property": [
+        "container",
+        [
+          {
+          "name": "type",
+          "type": "i8"
+          },
+          {
+          "name": "value",
+          "type": "i32"
+          }
+        ]
+      ],
+      "packet_set_entity_property": [
+        "container", 
+        [
+          {
+          "name": "entity_id",
+          "type": "i8"
+          },
+          {
+          "name": "type",
+          "type": "i8"
+          },
+          {
+          "name": "value",
+          "type": "i32"
+          }
+        ]
+      ],
       "packet": [
         "container",
         [
@@ -693,7 +743,10 @@
                   "0x24": "remove_block",
                   "0x25": "define_block_ext",
                   "0x27": "set_text_color",
-                  "0x26": "bulk_block_update"
+                  "0x26": "bulk_block_update",
+                  "0x28": "set_map_env_url",
+                  "0x29": "set_map_env_property",
+                  "0x2A": "set_entity_property"
                 }
               }
             ]
@@ -726,7 +779,10 @@
                   "remove_block": "packet_remove_block",
                   "define_block_ext": "packet_define_block_ext",
                   "set_text_color": "packet_set_text_color",
-                  "bulk_block_update": "packet_bulk_block_update"
+                  "bulk_block_update": "packet_bulk_block_update",
+                  "set_map_env_url": "packet_set_map_env_url",
+                  "set_map_env_property": "packet_set_map_env_property",
+                  "set_entity_property": "packet_set_entity_property"
                 }
               }
             ]
