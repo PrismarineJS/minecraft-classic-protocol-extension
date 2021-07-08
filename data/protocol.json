@@ -170,7 +170,8 @@
                   "0x22": "player_clicked",
                   "0x10": "ext_info",
                   "0x11": "ext_entry",
-                  "0x13": "two_way_ping"
+                  "0x13": "two_way_ping",
+                  "0x2B": "two_way_ping"
                 }
               }
             ]
@@ -840,7 +841,8 @@
                   "0x2F": "velocity_control",
                   "0x30": "define_effect",
                   "0x31": "spawn_effect",
-                  "0x32": "define_model_part"
+                  "0x32": "define_model_part",
+                  "0x2B": "two_way_ping"
                 }
               }
             ]
