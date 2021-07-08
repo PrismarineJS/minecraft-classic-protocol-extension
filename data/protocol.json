@@ -12,70 +12,64 @@
     "vec3": [
       "container",
       [
-        [
-          {
-            "name": "x",
-            "type": "f32"
-          },
-          {
-            "name": "y",
-            "type": "f32"
-          },
-          {
-            "name": "z",
-            "type": "f32"
-          }
-        ]
+        {
+          "name": "x",
+          "type": "f32"
+        },
+        {
+          "name": "y",
+          "type": "f32"
+        },
+        {
+          "name": "z",
+          "type": "f32"
+        }
       ]
     ],
     "uvcoords": [
       "container",
       [
-        [
-          {
-            "name": "u1",
-            "type": "u16"
-          },
-          {
-            "name": "v1",
-            "type": "u16"
-          },
-          {
-            "name": "u2",
-            "type": "u16"
-          },
-          {
-            "name": "v2",
-            "type": "u16"
-          }
-        ]
+        {
+          "name": "u1",
+          "type": "u16"
+        },
+        {
+          "name": "v1",
+          "type": "u16"
+        },
+        {
+          "name": "u2",
+          "type": "u16"
+        },
+        {
+          "name": "v2",
+          "type": "u16"
+        }
       ]
     ],
     "animData": [
       "container",
       [
-        [
-          {
-            "name": "flags",
-            "type": "i8"
-          },
-          {
-            "name": "a",
-            "type": "f32"
-          },
-          {
-            "name": "b",
-            "type": "f32"
-          },
-          {
-            "name": "c",
-            "type": "f32"
-          },
-          {
-            "name": "d",
-            "type": "f32"
-          }
-        ]
+        {
+          "name": "flags",
+          "type": "i8"
+        },
+        {
+          "name": "a",
+          "type": "f32"
+        },
+        {
+          "name": "b",
+          "type": "f32"
+        },
+        {
+          "name": "c",
+          "type": "f32"
+        },
+        {
+          "name": "d",
+          "type": "f32"
+        }
       ]
     ]
   },
