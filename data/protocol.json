@@ -165,7 +165,9 @@
                   "0x10": "ext_info",
                   "0x11": "ext_entry",
                   "0x13": "custom_block_support_level",
-                  "0x2B": "two_way_ping"
+                  "0x2B": "two_way_ping",
+                  "0x05": "set_block",
+                  "0x08": "position_and_orientation_update"
                 }
               }
             ]
@@ -181,7 +183,9 @@
                   "ext_info": "packet_ext_info",
                   "ext_entry": "packet_ext_entry",
                   "custom_block_support_level": "packet_custom_block_support_level",
-                  "two_way_ping": "packet_two_way_ping"
+                  "two_way_ping": "packet_two_way_ping",
+                  "set_block": "packet_set_block",
+                  "position_and_orientation_update": "packet_position_and_orientation_update"
                 }
               }
             ]
@@ -198,6 +202,60 @@
           {
             "name": "data",
             "type": "i16"
+          }
+        ]
+      ],
+      "packet_set_block": [
+        "container",
+        [
+          {
+            "name": "x",
+            "type": "i16"
+          },
+          {
+            "name": "y",
+            "type": "i16"
+          },
+          {
+            "name": "z",
+            "type": "i16"
+          },
+          {
+            "name": "mode",
+            "type": "u8"
+          },
+          {
+            "name": "block_type",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_position_and_orientation_update": [
+        "container",
+        [
+          {
+            "name": "player_id",
+            "type": "i16"
+          },
+          {
+            "name": "change_in_x",
+            "type": "i8"
+          },
+          {
+            "name": "change_in_y",
+            "type": "i8"
+          },
+          {
+            "name": "change_in_z",
+            "type": "i8"
+          },
+          {
+            "name": "yaw",
+            "type": "i8"
+          },
+          {
+            "name": "pitch",
+            "type": "i8"
           }
         ]
       ]
@@ -254,7 +312,7 @@
         [
           {
             "name": "block_to_hold",
-            "type": "i8"
+            "type": "i16"
           },
           {
             "name": "prevent_change",
@@ -442,7 +500,7 @@
         [
           {
             "name": "block_type",
-            "type": "i8"
+            "type": "i16"
           },
           {
             "name": "allow_placement",
@@ -539,7 +597,7 @@
         [
           {
             "name": "block_id",
-            "type": "i8"
+            "type": "i16"
           },
           {
             "name": "name",
@@ -608,7 +666,7 @@
         [
           {
             "name": "block_id",
-            "type": "i8"
+            "type": "i16"
           }
         ]
       ],
@@ -617,7 +675,7 @@
         [
           {
             "name": "block_id",
-            "type": "i8"
+            "type": "i16"
           },
           {
             "name": "name",
@@ -836,7 +894,8 @@
                   "0x2F": "velocity_control",
                   "0x30": "define_effect",
                   "0x31": "spawn_effect",
-                  "0x32": "define_model_part"
+                  "0x32": "define_model_part",
+                  "0x06": "set_block"
                 }
               }
             ]
@@ -882,7 +941,8 @@
                   "define_effect": "packet_define_effect",
                   "spawn_effect": "packet_spawn_effect",
                   "define_model": "packet_define_model",
-                  "define_model_part": "packet_define_model_part"
+                  "define_model_part": "packet_define_model_part",
+                  "set_block": "packet_set_block"
                 }
               }
             ]
@@ -916,11 +976,11 @@
         [
           {
             "name": "order",
-            "type": "u8"
+            "type": "i16"
           },
           {
             "name": "blockId",
-            "type": "u8"
+            "type": "i16"
           }
         ]
       ],
@@ -929,7 +989,7 @@
         [
           {
             "name": "blockId",
-            "type": "u8"
+            "type": "i16"
           },
           {
             "name": "hotbarIndex",
@@ -1220,6 +1280,27 @@
           {
             "name": "flags",
             "type": "u8"
+          }
+        ]
+      ],
+      "packet_set_block": [
+        "container",
+        [
+          {
+            "name": "x",
+            "type": "i16"
+          },
+          {
+            "name": "y",
+            "type": "i16"
+          },
+          {
+            "name": "z",
+            "type": "i16"
+          },
+          {
+            "name": "block_type",
+            "type": "i16"
           }
         ]
       ]
