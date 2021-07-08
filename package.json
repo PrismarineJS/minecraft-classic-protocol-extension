@@ -4,20 +4,23 @@
   "description": "A plugin for minecraft-classic-protocol that adds experimental and bleeding-edge CPE features",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "protodef-validator data/protocol.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhsjlw/minecraft-classic-protocol-extension.git"
+    "url": "git+https://github.com/PrismarineJS/minecraft-classic-protocol-extension.git"
   },
   "keywords": [],
   "author": "mhsjlw",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mhsjlw/minecraft-classic-protocol-extension/issues"
+    "url": "https://github.com/PrismarineJS/minecraft-classic-protocol-extension/issues"
   },
-  "homepage": "https://github.com/mhsjlw/minecraft-classic-protocol-extension#readme",
+  "homepage": "https://github.com/PrismarineJS/minecraft-classic-protocol-extension#readme",
   "dependencies": {
     "minecraft-classic-protocol": "^1.3.0"
+  },
+  "devDependencies": {
+    "protodef-validator": "^1.3.1"
   }
 }
