@@ -1,10 +1,77 @@
 {
-  "types":{
-    "u8":"native",
-    "string":"native",
-    "i8":"native",
-    "i16":"native",
-    "byte_array":"native"
+  "types": {
+    "u8": "native",
+    "string": "native",
+    "i8": "native",
+    "i16": "native",
+    "byte_array": "native",
+    "byte": "native",
+    "i32": "native",
+    "u16": "native",
+    "f32": "native",
+    "vec3": [
+      "container",
+      [
+        {
+          "name": "x",
+          "type": "f32"
+        },
+        {
+          "name": "y",
+          "type": "f32"
+        },
+        {
+          "name": "z",
+          "type": "f32"
+        }
+      ]
+    ],
+    "uvcoords": [
+      "container",
+      [
+        {
+          "name": "u1",
+          "type": "u16"
+        },
+        {
+          "name": "v1",
+          "type": "u16"
+        },
+        {
+          "name": "u2",
+          "type": "u16"
+        },
+        {
+          "name": "v2",
+          "type": "u16"
+        }
+      ]
+    ],
+    "animData": [
+      "container",
+      [
+        {
+          "name": "flags",
+          "type": "i8"
+        },
+        {
+          "name": "a",
+          "type": "f32"
+        },
+        {
+          "name": "b",
+          "type": "f32"
+        },
+        {
+          "name": "c",
+          "type": "f32"
+        },
+        {
+          "name": "d",
+          "type": "f32"
+        }
+      ]
+    ]
   },
   "toServer": {
     "types": {
@@ -74,7 +141,7 @@
             "type": "i32"
           }
         ]
-      ],     
+      ],
       "packet_custom_block_support_level": [
         "container",
         [
@@ -97,7 +164,8 @@
                   "0x22": "player_clicked",
                   "0x10": "ext_info",
                   "0x11": "ext_entry",
-                  "0x13": "custom_block_support_level"
+                  "0x13": "custom_block_support_level",
+                  "0x2B": "two_way_ping"
                 }
               }
             ]
@@ -112,10 +180,24 @@
                   "player_clicked": "packet_player_clicked",
                   "ext_info": "packet_ext_info",
                   "ext_entry": "packet_ext_entry",
-                  "custom_block_support_level": "packet_custom_block_support_level"
+                  "custom_block_support_level": "packet_custom_block_support_level",
+                  "two_way_ping": "packet_two_way_ping"
                 }
               }
             ]
+          }
+        ]
+      ],
+      "packet_two_way_ping": [
+        "container",
+        [
+          {
+            "name": "direction",
+            "type": "i8"
+          },
+          {
+            "name": "data",
+            "type": "i16"
           }
         ]
       ]
@@ -677,8 +759,8 @@
         "container",
         [
           {
-          "name": "texture_pack_url",
-          "type": "string"
+            "name": "texture_pack_url",
+            "type": "string"
           }
         ]
       ],
@@ -686,29 +768,29 @@
         "container",
         [
           {
-          "name": "type",
-          "type": "i8"
+            "name": "type",
+            "type": "i8"
           },
           {
-          "name": "value",
-          "type": "i32"
+            "name": "value",
+            "type": "i32"
           }
         ]
       ],
       "packet_set_entity_property": [
-        "container", 
+        "container",
         [
           {
-          "name": "entity_id",
-          "type": "i8"
+            "name": "entity_id",
+            "type": "i8"
           },
           {
-          "name": "type",
-          "type": "i8"
+            "name": "type",
+            "type": "i8"
           },
           {
-          "name": "value",
-          "type": "i32"
+            "name": "value",
+            "type": "i32"
           }
         ]
       ],
@@ -737,7 +819,7 @@
                   "0x1C": "set_block_permission",
                   "0x1D": "change_model",
                   "0x1E": "env_set_map_appearance_2",
-                  "0x1F": "set_weather_type",
+                  "0x1F": "env_set_weather_type",
                   "0x20": "hack_control",
                   "0x23": "define_block",
                   "0x24": "remove_block",
@@ -746,7 +828,15 @@
                   "0x26": "bulk_block_update",
                   "0x28": "set_map_env_url",
                   "0x29": "set_map_env_property",
-                  "0x2A": "set_entity_property"
+                  "0x2A": "set_entity_property",
+                  "0x2B": "two_way_ping",
+                  "0x2C": "set_inventory_order",
+                  "0x2D": "set_hotbar",
+                  "0x2E": "set_spawn_point",
+                  "0x2F": "velocity_control",
+                  "0x30": "define_effect",
+                  "0x31": "spawn_effect",
+                  "0x32": "define_model_part"
                 }
               }
             ]
@@ -782,10 +872,354 @@
                   "bulk_block_update": "packet_bulk_block_update",
                   "set_map_env_url": "packet_set_map_env_url",
                   "set_map_env_property": "packet_set_map_env_property",
-                  "set_entity_property": "packet_set_entity_property"
+                  "set_entity_property": "packet_set_entity_property",
+                  "two_way_ping": "packet_two_way_ping",
+                  "env_set_weather_type": "packet_env_set_weather_type",
+                  "set_inventory_order": "packet_set_inventory_order",
+                  "set_hotbar": "packet_set_hotbar",
+                  "set_spawn_point": "packet_set_spawn_point",
+                  "velocity_control": "packet_velocity_control",
+                  "define_effect": "packet_define_effect",
+                  "spawn_effect": "packet_spawn_effect",
+                  "define_model": "packet_define_model",
+                  "define_model_part": "packet_define_model_part"
                 }
               }
             ]
+          }
+        ]
+      ],
+      "packet_two_way_ping": [
+        "container",
+        [
+          {
+            "name": "direction",
+            "type": "i8"
+          },
+          {
+            "name": "data",
+            "type": "i16"
+          }
+        ]
+      ],
+      "packet_env_set_weather_type": [
+        "container",
+        [
+          {
+            "name": "weatherType",
+            "type": "byte"
+          }
+        ]
+      ],
+      "packet_set_inventory_order": [
+        "container",
+        [
+          {
+            "name": "order",
+            "type": "u8"
+          },
+          {
+            "name": "blockId",
+            "type": "u8"
+          }
+        ]
+      ],
+      "packet_set_hotbar": [
+        "container",
+        [
+          {
+            "name": "blockId",
+            "type": "u8"
+          },
+          {
+            "name": "hotbarIndex",
+            "type": "u8"
+          }
+        ]
+      ],
+      "packet_set_spawn_point": [
+        "container",
+        [
+          {
+            "name": "spawnX",
+            "type": "i16"
+          },
+          {
+            "name": "spawnY",
+            "type": "i16"
+          },
+          {
+            "name": "spawnZ",
+            "type": "i16"
+          },
+          {
+            "name": "spawnYaw",
+            "type": "i8"
+          },
+          {
+            "name": "spawnPitch",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_velocity_control": [
+        "container",
+        [
+          {
+            "name": "velocityX",
+            "type": "i32"
+          },
+          {
+            "name": "velocityY",
+            "type": "i32"
+          },
+          {
+            "name": "velocityZ",
+            "type": "i32"
+          },
+          {
+            "name": "modeX",
+            "type": "i8"
+          },
+          {
+            "name": "modeY",
+            "type": "i8"
+          },
+          {
+            "name": "modeZ",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_define_effect": [
+        "container",
+        [
+          {
+            "name": "effectId",
+            "type": "u8"
+          },
+          {
+            "name": "u1",
+            "type": "u8"
+          },
+          {
+            "name": "v1",
+            "type": "u8"
+          },
+          {
+            "name": "u2",
+            "type": "u8"
+          },
+          {
+            "name": "v2",
+            "type": "u8"
+          },
+          {
+            "name": "redTint",
+            "type": "u8"
+          },
+          {
+            "name": "greenTint",
+            "type": "u8"
+          },
+          {
+            "name": "blueTint",
+            "type": "u8"
+          },
+          {
+            "name": "frameCount",
+            "type": "u8"
+          },
+          {
+            "name": "particleCount",
+            "type": "u8"
+          },
+          {
+            "name": "size",
+            "type": "u8"
+          },
+          {
+            "name": "sizeVariation",
+            "type": "i32"
+          },
+          {
+            "name": "spread",
+            "type": "u16"
+          },
+          {
+            "name": "speed",
+            "type": "i32"
+          },
+          {
+            "name": "gravity",
+            "type": "i32"
+          },
+          {
+            "name": "baseLifetime",
+            "type": "i32"
+          },
+          {
+            "name": "lifetimeVariation",
+            "type": "i32"
+          },
+          {
+            "name": "collideFlags",
+            "type": "u8"
+          },
+          {
+            "name": "fullBright",
+            "type": "i8"
+          }
+        ]
+      ],
+      "packet_spawn_effect": [
+        "container",
+        [
+          {
+            "name": "effectId",
+            "type": "i8"
+          },
+          {
+            "name": "positionX",
+            "type": "i32"
+          },
+          {
+            "name": "positionY",
+            "type": "i32"
+          },
+          {
+            "name": "positionZ",
+            "type": "i32"
+          },
+          {
+            "name": "originX",
+            "type": "i32"
+          },
+          {
+            "name": "originY",
+            "type": "i32"
+          },
+          {
+            "name": "originZ",
+            "type": "i32"
+          }
+        ]
+      ],
+      "packet_define_model": [
+        "container",
+        [
+          {
+            "name": "modelId",
+            "type": "u8"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "flags",
+            "type": "u8"
+          },
+          {
+            "name": "nameY",
+            "type": "f32"
+          },
+          {
+            "name": "eyeY",
+            "type": "f32"
+          },
+          {
+            "name": "collisionSize",
+            "type": "vec3"
+          },
+          {
+            "name": "pickingBoundsMin",
+            "type": "vec3"
+          },
+          {
+            "name": "pickingBoundsMax",
+            "type": "vec3"
+          },
+          {
+            "name": "uScale",
+            "type": "u16"
+          },
+          {
+            "name": "vScale",
+            "type": "u16"
+          },
+          {
+            "name": "partsCount",
+            "type": "u8"
+          }
+        ]
+      ],
+      "packet_define_model_part": [
+        "container",
+        [
+          {
+            "name": "modelId",
+            "type": "u8"
+          },
+          {
+            "name": "minCoords",
+            "type": "vec3"
+          },
+          {
+            "name": "maxCoords",
+            "type": "vec3"
+          },
+          {
+            "name": "topFaceUV",
+            "type": "uvcoords"
+          },
+          {
+            "name": "bottomFaceUV",
+            "type": "uvcoords"
+          },
+          {
+            "name": "frontFaceUV",
+            "type": "uvcoords"
+          },
+          {
+            "name": "backFaceUV",
+            "type": "uvcoords"
+          },
+          {
+            "name": "leftFaceUV",
+            "type": "uvcoords"
+          },
+          {
+            "name": "rightFaceUV",
+            "type": "uvcoords"
+          },
+          {
+            "name": "rotationOrigin",
+            "type": "vec3"
+          },
+          {
+            "name": "rotationAngles",
+            "type": "vec3"
+          },
+          {
+            "name": "animationOne",
+            "type": "animData"
+          },
+          {
+            "name": "animationTwo",
+            "type": "animData"
+          },
+          {
+            "name": "animationThree",
+            "type": "animData"
+          },
+          {
+            "name": "animationFour",
+            "type": "animData"
+          },
+          {
+            "name": "flags",
+            "type": "u8"
           }
         ]
       ]
