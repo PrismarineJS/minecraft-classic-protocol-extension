@@ -164,7 +164,7 @@
                   "0x22": "player_clicked",
                   "0x10": "ext_info",
                   "0x11": "ext_entry",
-                  "0x13": "two_way_ping",
+                  "0x13": "custom_block_support_level",
                   "0x2B": "two_way_ping"
                 }
               }
@@ -807,7 +807,7 @@
                   "0x10": "ext_info",
                   "0x11": "ext_entry",
                   "0x12": "set_click_distance",
-                  "0x13": "two_way_ping",
+                  "0x13": "custom_block_support_level",
                   "0x14": "hold_this",
                   "0x15": "set_text_hotkey",
                   "0x16": "add_player_name",
@@ -829,14 +829,14 @@
                   "0x28": "set_map_env_url",
                   "0x29": "set_map_env_property",
                   "0x2A": "set_entity_property",
+                  "0x2B": "two_way_ping",
                   "0x2C": "set_inventory_order",
                   "0x2D": "set_hotbar",
                   "0x2E": "set_spawn_point",
                   "0x2F": "velocity_control",
                   "0x30": "define_effect",
                   "0x31": "spawn_effect",
-                  "0x32": "define_model_part",
-                  "0x2B": "two_way_ping"
+                  "0x32": "define_model_part"
                 }
               }
             ]
