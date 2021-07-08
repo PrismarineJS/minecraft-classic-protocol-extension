@@ -4,7 +4,7 @@
   "description": "A plugin for minecraft-classic-protocol that adds experimental and bleeding-edge CPE features",
   "main": "index.js",
   "scripts": {
-    "test": "protodef-validator data/protocol.json"
+    "test": "npm i && protodef-validator data/protocol.json"
   },
   "repository": {
     "type": "git",
