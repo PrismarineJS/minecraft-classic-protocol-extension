@@ -1,1 +1,1 @@
-module.exports.protocol = require('./data/protocol');
+module.exports.protocol = require('./data/protocol.json')
