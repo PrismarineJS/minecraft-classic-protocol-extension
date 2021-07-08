@@ -1,6 +1,6 @@
 {
   "name": "minecraft-classic-protocol-extension",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A plugin for minecraft-classic-protocol that adds experimental and bleeding-edge CPE features",
   "main": "index.js",
   "scripts": {
