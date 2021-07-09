@@ -907,7 +907,8 @@
                   "0x31": "spawn_effect",
                   "0x32": "define_model_part",
                   "0x06": "set_block",
-                  "0x02": "level_initialize"
+                  "0x02": "level_initialize",
+                  "0x34": "remove_model"
                 }
               }
             ]
@@ -955,7 +956,8 @@
                   "define_model": "packet_define_model",
                   "define_model_part": "packet_define_model_part",
                   "set_block": "packet_set_block",
-                  "level_initialize": "packet_level_initialize"
+                  "level_initialize": "packet_level_initialize",
+                  "remove_model": "packet_remove_model"
                 }
               }
             ]
@@ -1323,6 +1325,15 @@
           {
             "name": "sizeOfMap",
             "type": "i32"
+          }
+        ]
+      ],
+      "packet_remove_model": [
+        "container",
+        [
+          {
+            "name": "modelId",
+            "type": "u8"
           }
         ]
       ]
