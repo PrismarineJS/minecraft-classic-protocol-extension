@@ -624,15 +624,15 @@
           },
           {
             "name": "top_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "side_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "bottom_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "transmits_light",
@@ -702,27 +702,27 @@
           },
           {
             "name": "top_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "left_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "right_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "front_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "back_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "bottom_texture_id",
-            "type": "i8"
+            "type": "u16"
           },
           {
             "name": "transmits_light",
