@@ -983,7 +983,7 @@
         [
           {
             "name": "weatherType",
-            "type": "byte"
+            "type": "i8"
           }
         ]
       ],
