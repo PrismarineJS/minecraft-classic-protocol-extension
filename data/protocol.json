@@ -393,15 +393,15 @@
           },
           {
             "name": "x",
-            "type": "i16"
+            "type": "i32"
           },
           {
             "name": "y",
-            "type": "i16"
+            "type": "i32"
           },
           {
             "name": "z",
-            "type": "i16"
+            "type": "i32"
           },
           {
             "name": "yaw",
