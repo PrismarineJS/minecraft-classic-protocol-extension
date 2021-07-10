@@ -5,7 +5,6 @@
     "i8": "native",
     "i16": "native",
     "byte_array": "native",
-    "byte": "native",
     "i32": "native",
     "u16": "native",
     "f32": "native",
